@@ -833,17 +833,13 @@ html.touch-ui #touch-controls {
     width: 100vw;
     height: 100dvh;
     min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
     border: 0;
     border-radius: 0;
   }
 
   #game {
-    flex: 1 1 auto;
     width: 100%;
-    height: auto;
-    min-height: 0;
+    height: 100%;
   }
 
   #status-pill,
@@ -853,20 +849,17 @@ html.touch-ui #touch-controls {
   }
 
   #touch-controls {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    padding: 12px calc(20px + env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px))
-      calc(20px + env(safe-area-inset-left, 0px));
-    margin: 0 auto;
-    width: min(100%, 760px);
+    position: absolute;
+    left: calc(8px + env(safe-area-inset-left, 0px));
+    right: calc(8px + env(safe-area-inset-right, 0px));
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    display: flex;
     align-items: stretch;
-    justify-content: stretch;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    width: auto;
   }
 
   #touch-controls button {
@@ -884,11 +877,7 @@ html.touch-ui #touch-controls {
   }
 
   #touch-controls button[data-action="jump"] {
-    margin-left: 0;
-    min-width: 0;
-  }
-
-  html.touch-ui #touch-controls {
-    display: grid;
+    margin-left: auto;
+    min-width: 96px;
   }
 }
