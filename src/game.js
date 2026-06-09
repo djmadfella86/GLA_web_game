@@ -1017,10 +1017,12 @@ function showStoryCard({ kicker, title, copy, button }) {
   storyCopy.textContent = copy;
   storyButton.textContent = button;
   storyCard.classList.remove("hidden");
+  shell.classList.add("story-open");
 }
 
 function hideStoryCard() {
   storyCard.classList.add("hidden");
+  shell.classList.remove("story-open");
 }
 
 function showTitleScreen() {
