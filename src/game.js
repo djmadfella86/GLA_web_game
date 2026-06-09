@@ -50,6 +50,26 @@ const storyCopy = document.querySelector("#story-copy");
 const storyButton = document.querySelector("#story-button");
 const touchButtons = Array.from(document.querySelectorAll("#touch-controls button"));
 
+function isEmbeddedApp() {
+  try {
+    return window.self !== window.top;
+  } catch {
+    return true;
+  }
+}
+
+function updateInputMode() {
+  const embedded = isEmbeddedApp();
+  const touchLike =
+    embedded ||
+    window.matchMedia("(pointer: coarse)").matches ||
+    window.matchMedia("(any-pointer: coarse)").matches ||
+    navigator.maxTouchPoints > 0;
+
+  document.documentElement.classList.toggle("embedded-app", embedded);
+  document.documentElement.classList.toggle("touch-ui", touchLike);
+}
+
 document.addEventListener(
   "selectstart",
   (event) => {
@@ -69,6 +89,9 @@ document.addEventListener("contextmenu", (event) => {
     event.preventDefault();
   }
 });
+updateInputMode();
+window.addEventListener("resize", updateInputMode);
+window.addEventListener("orientationchange", updateInputMode);
 
 const ACTIONS = {
   left: false,
