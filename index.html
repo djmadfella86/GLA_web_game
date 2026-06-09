@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GLA: Grand Lap Australia</title>
+    <link rel="stylesheet" href="src/styles.css?v=20260608e" />
+  </head>
+  <body>
+    <main id="app">
+      <section id="game-shell" aria-label="GLA playable prototype">
+        <canvas id="game" width="960" height="540"></canvas>
+
+        <div id="status-pill" aria-label="Snag counter">
+          <span class="status-slot" id="status-snags">
+            <span id="status-icon" aria-hidden="true"></span>
+            <span id="status-count">0</span>
+          </span>
+          <span class="status-slot" id="status-beer">
+            <span id="status-power-icon" aria-hidden="true"></span>
+            <span id="status-power"></span>
+          </span>
+        </div>
+
+        <div id="lives-pill" aria-label="Barry lives">
+          <span id="lives-icon" aria-hidden="true"></span>
+          <span id="lives-count">5</span>
+        </div>
+
+        <div id="touch-controls" aria-label="Touch controls">
+          <button type="button" data-action="left" aria-label="Move left">◀</button>
+          <button type="button" data-action="right" aria-label="Move right">▶</button>
+          <button type="button" data-action="jump" aria-label="Jump">Jump</button>
+          <button type="button" data-action="jump" aria-label="Double jump">2nd</button>
+        </div>
+
+        <div id="story-card" class="hidden">
+          <div id="story-scene" aria-hidden="true">
+            <div class="scene-dust"></div>
+            <div class="scene-dust scene-dust-two"></div>
+            <div id="smoke-stack">
+              <span class="smoke puff-one"></span>
+              <span class="smoke puff-two"></span>
+              <span class="smoke puff-three"></span>
+            </div>
+            <div id="ute-wreck">
+              <div class="ute-tray"></div>
+              <div class="ute-cab"></div>
+              <div class="ute-window"></div>
+              <div class="ute-bullbar"></div>
+              <div class="ute-door-dent"></div>
+              <div class="ute-headlight"></div>
+              <div class="ute-wheel wheel-back"></div>
+              <div class="ute-wheel wheel-front"></div>
+            </div>
+            <div id="roo-hit">
+              <span class="roo-ear ear-back"></span>
+              <span class="roo-ear ear-front"></span>
+              <span class="roo-tail"></span>
+              <span class="roo-body"></span>
+              <span class="roo-leg leg-back"></span>
+              <span class="roo-leg leg-front"></span>
+            </div>
+          </div>
+          <p id="story-kicker">The Legend</p>
+          <h2 id="story-title">Barry Lawson was born to do the lap.</h2>
+          <p id="story-copy">The truth is usually a bit worse, a bit sillier, and somehow more Australian.</p>
+          <button id="story-button">Start Mission</button>
+        </div>
+      </section>
+    </main>
+    <script src="src/game.js?v=20260608e"></script>
+  </body>
+</html>
