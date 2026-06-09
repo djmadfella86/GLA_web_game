@@ -31,11 +31,7 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p site
-          rsync -a --delete \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude 'site' \
-            ./ site/
+          git archive --format=tar HEAD index.html README.md CREDITS.md .nojekyll assets src | tar -x -C site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
