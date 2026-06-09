@@ -26,6 +26,16 @@ body {
   margin: 0;
 }
 
+html,
+body,
+#app,
+#app * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   display: grid;
   place-items: center;
@@ -56,6 +66,7 @@ body {
     linear-gradient(180deg, rgba(25, 22, 18, 0.82), rgba(12, 10, 8, 0.92)),
     linear-gradient(135deg, #241c15, #312519);
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
+  touch-action: none;
 }
 
 #game {
@@ -64,6 +75,7 @@ body {
   height: 100%;
   image-rendering: auto;
   background: #7bb3d4;
+  touch-action: none;
 }
 
 #status-pill {

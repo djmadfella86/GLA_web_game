@@ -50,6 +50,26 @@ const storyCopy = document.querySelector("#story-copy");
 const storyButton = document.querySelector("#story-button");
 const touchButtons = Array.from(document.querySelectorAll("#touch-controls button"));
 
+document.addEventListener(
+  "selectstart",
+  (event) => {
+    if (event.target instanceof Element && event.target.closest("#game-shell")) {
+      event.preventDefault();
+    }
+  },
+  { passive: false },
+);
+document.addEventListener("dragstart", (event) => {
+  if (event.target instanceof Element && event.target.closest("#game-shell")) {
+    event.preventDefault();
+  }
+});
+document.addEventListener("contextmenu", (event) => {
+  if (event.target instanceof Element && event.target.closest("#game-shell")) {
+    event.preventDefault();
+  }
+});
+
 const ACTIONS = {
   left: false,
   right: false,
