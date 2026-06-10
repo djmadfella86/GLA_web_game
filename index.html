@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GLA: Grand Lap Australia</title>
-    <link rel="stylesheet" href="src/styles.css?v=20260609f" />
+    <link rel="stylesheet" href="src/styles.css?v=20260610b" />
   </head>
   <body>
     <main id="app">
@@ -26,6 +26,8 @@
           <span id="lives-icon" aria-hidden="true"></span>
           <span id="lives-count">5</span>
         </div>
+
+        <button id="pause-button" type="button" aria-label="Pause game">II</button>
 
         <div id="touch-controls" aria-label="Touch controls">
           <button type="button" data-action="left" aria-label="Move left">◀</button>
@@ -64,10 +66,35 @@
           <p id="story-kicker">The Legend</p>
           <h2 id="story-title">Barry Lawson was born to do the lap.</h2>
           <p id="story-copy">The truth is usually a bit worse, a bit sillier, and somehow more Australian.</p>
-          <button id="story-button">Start Mission</button>
+          <div id="level-picker" class="hidden" aria-label="Test levels"></div>
+          <div id="story-actions">
+            <button id="story-primary" type="button">Start Mission</button>
+            <button id="story-secondary" type="button" class="secondary hidden">Test Levels</button>
+          </div>
+        </div>
+
+        <div id="pause-card" class="modal-card hidden" role="dialog" aria-modal="true" aria-label="Paused">
+          <p class="modal-kicker">Paused</p>
+          <h2>Barry’s on a breather.</h2>
+          <p>The lap is frozen. Resume, restart the level, or head back to title.</p>
+          <div class="modal-actions">
+            <button id="pause-resume" type="button">Resume</button>
+            <button id="pause-restart" type="button" class="secondary">Restart Level</button>
+            <button id="pause-quit" type="button" class="secondary">Quit To Title</button>
+          </div>
+        </div>
+
+        <div id="continue-card" class="modal-card hidden" role="dialog" aria-modal="true" aria-label="Continue">
+          <p class="modal-kicker">Continue?</p>
+          <h2>Barry is out of lives.</h2>
+          <p id="continue-copy">Use a continue to keep the lap going from the last checkpoint.</p>
+          <div class="modal-actions">
+            <button id="continue-button" type="button">Continue</button>
+            <button id="continue-quit" type="button" class="secondary">Quit To Title</button>
+          </div>
         </div>
       </section>
     </main>
-    <script src="src/game.js?v=20260609f"></script>
+    <script src="src/game.js?v=20260610b"></script>
   </body>
 </html>
